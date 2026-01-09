@@ -1,0 +1,142 @@
+/* Core Layout Fixes */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Disables page-level scrolling */
+  background-color: #f8fafc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+/* Container that fills the browser and centers content */
+.app-viewport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  border: 1px solid black;
+}
+
+/* Chat structure at 90% width */
+.chatbot-layout {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: 90vh; /* Stretches to 90% of screen height */
+  gap: 20px;
+}
+
+/* The Main Screen (Upper Box) */
+.chat-window {
+  flex: 1; /* Grows to take available vertical space */
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 2px solid #000;
+  border-radius: 4px;
+  overflow: hidden; /* Prevents children from spilling out */
+}
+
+/* Header styling based on wireframe */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-circle {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
+
+.header-rect-long {
+  width: 180px;
+  height: 18px;
+  border: 2px solid #000;
+}
+
+.header-rect-short {
+  width: 100px;
+  height: 18px;
+  border: 2px solid #000;
+}
+
+/* THE SCROLLABLE AREA */
+.message-list {
+  flex: 1;
+  overflow-y: auto; /* Internal scroll only */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+}
+
+/* Message Styles */
+.message-row { display: flex; width: 100%; }
+.message-row.user { justify-content: flex-end; }
+.message-row.bot { justify-content: flex-start; }
+
+.message-bubble {
+  max-width: 60%;
+  padding: 12px 20px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 15px;
+}
+
+.user .message-bubble {
+  background: #f1f5f9;
+}
+
+/* Detached Footer Area */
+.chat-footer {
+  display: flex;
+  gap: 15px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.chat-input-bar {
+  flex: 1;
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 0 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+.chat-send-sq {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #000;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.chat-send-sq:hover {
+  background: #000;
+  color: #fff;
+}
